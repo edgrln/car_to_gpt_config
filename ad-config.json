@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "link": "https://example.com/?ref=твоя_метка",
+  "imageUrl": "https://example.com/banner.png",
+  "text": "Текст баннера",
+  "disclosureText": "Партнёрская ссылка"
+}
