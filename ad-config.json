@@ -1,18 +1,18 @@
 {
-  "enabled": true,
+  "enabled": false,
   "link": "https://www.wildberries.ru/catalog/211237441/detail.aspx",
   "imageUrl": "https://basket-14.wbcontent.net/vol2112/part211237/211237441/images/big/1.webp",
   "text": "Текст баннера",
   "disclosureText": "Партнёрская ссылка",
   "banner2": {
-    "enabled": true,
+    "enabled": false,
     "link": "https://www.wildberries.ru/catalog/211237441/detail.aspx",
     "imageUrl": "https://basket-02.wbcontent.net/vol152/part15265/15265213/images/big/2.webp",
     "text": "Текст баннера",
     "disclosureText": "Партнёрская ссылка"
   },
   "banner3": { 
-    "enabled": true,
+    "enabled": false,
     "link": "https://www.wildberries.ru/catalog/211237441/detail.aspx",
     "imageUrl": "https://basket-14.wbcontent.net/vol2112/part211237/211237441/images/big/1.webp",
     "text": "Текст баннера",
