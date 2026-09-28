@@ -3,7 +3,7 @@
   "countries": {
     "DE": {
       "banner": {
-        "enabled": true,
+        "enabled": false,
         "link": "https://www.wildberries.ru/catalog/211237441/detail.aspx",
         "imageUrl": "https://basket-14.wbcontent.net/vol2112/part211237/211237441/images/big/1.webp",
         "locales": {
@@ -35,18 +35,18 @@
           "icon": "🔍",
           "enabled": true,
           "locales": {
-            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical (partner link)"},
-            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical (Partnerlink)"},
-            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical (партнёрская ссылка)"},
-            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical (партнерське посилання)"},
-            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical (link partnerski)"},
-            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi (iş ortağı bağlantısı)"},
-            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical (enlace de afiliado)"},
-            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical (lien partenaire)"},
-            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical (link di affiliazione)"},
-            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical (partnerský odkaz)"},
-            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical (ligação de afiliado)"},
-            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical (رابط شريك)"}
+            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical"},
+            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical"},
+            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical"},
+            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical"},
+            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical"},
+            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi"},
+            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical"},
+            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical"},
+            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical"},
+            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical"},
+            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical"},
+            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical"}
           }
         },
         {
@@ -96,18 +96,18 @@
           "icon": "🔍",
           "enabled": true,
           "locales": {
-            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical (partner link)"},
-            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical (Partnerlink)"},
-            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical (партнёрская ссылка)"},
-            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical (партнерське посилання)"},
-            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical (link partnerski)"},
-            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi (iş ortağı bağlantısı)"},
-            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical (enlace de afiliado)"},
-            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical (lien partenaire)"},
-            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical (link di affiliazione)"},
-            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical (partnerský odkaz)"},
-            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical (ligação de afiliado)"},
-            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical (رابط شريك)"}
+            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical"},
+            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical"},
+            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical"},
+            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical"},
+            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical"},
+            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi"},
+            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical"},
+            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical"},
+            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical"},
+            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical"},
+            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical"},
+            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical"}
           }
         }
       ]
@@ -146,18 +146,18 @@
           "icon": "🔍",
           "enabled": true,
           "locales": {
-            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical (partner link)"},
-            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical (Partnerlink)"},
-            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical (партнёрская ссылка)"},
-            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical (партнерське посилання)"},
-            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical (link partnerski)"},
-            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi (iş ortağı bağlantısı)"},
-            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical (enlace de afiliado)"},
-            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical (lien partenaire)"},
-            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical (link di affiliazione)"},
-            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical (partnerský odkaz)"},
-            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical (ligação de afiliado)"},
-            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical (رابط شريك)"}
+            "en": {"url": "https://www.carvertical.com/", "label": "Check history", "hint": "Accident and mileage history by VIN on carVertical"},
+            "de": {"url": "https://www.carvertical.com/", "label": "Historie prüfen", "hint": "Unfall- und Kilometerhistorie per FIN bei carVertical"},
+            "ru": {"url": "https://www.carvertical.com/", "label": "Проверить историю", "hint": "История аварий и пробега по VIN на carVertical"},
+            "uk": {"url": "https://www.carvertical.com/", "label": "Перевірити історію", "hint": "Історія аварій і пробігу за VIN на carVertical"},
+            "pl": {"url": "https://www.carvertical.com/", "label": "Sprawdź historię", "hint": "Historia wypadków i przebiegu po VIN w carVertical"},
+            "tr": {"url": "https://www.carvertical.com/", "label": "Geçmişi kontrol et", "hint": "carVertical’da VIN ile kaza ve kilometre geçmişi"},
+            "es": {"url": "https://www.carvertical.com/", "label": "Comprobar historial", "hint": "Historial de accidentes y kilometraje por VIN en carVertical"},
+            "fr": {"url": "https://www.carvertical.com/", "label": "Vérifier l’historique", "hint": "Historique des accidents et du kilométrage par VIN sur carVertical"},
+            "it": {"url": "https://www.carvertical.com/", "label": "Verifica la storia", "hint": "Storico di incidenti e chilometraggio tramite VIN su carVertical"},
+            "cs": {"url": "https://www.carvertical.com/", "label": "Prověřit historii", "hint": "Historie nehod a najetých km podle VIN na carVertical"},
+            "pt": {"url": "https://www.carvertical.com/", "label": "Verificar histórico", "hint": "Histórico de acidentes e quilometragem por VIN no carVertical"},
+            "ar": {"url": "https://www.carvertical.com/", "label": "التحقق من السجل", "hint": "سجل الحوادث وعدد الكيلومترات حسب رقم VIN على carVertical"}
           }
         }
       ]
