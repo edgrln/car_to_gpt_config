@@ -1,107 +1,613 @@
 <!--
-  Копия для истории/версионирования в этом репозитории. Живая страница
-  хостится отдельно, на том же GitHub Pages, что и ad-config.json
-  (edgrln.github.io/car_to_gpt_config/privacy-policy.html) — при правке
-  обновлять в обоих местах, этот файл сам по себе никуда не задеплоен.
+  Копия для истории/версионирования в этом репозитории (папка
+  car_to_gpt_config/ повторяет репозиторий на GitHub Pages, см. README.md в
+  ней). Живая страница — edgrln.github.io/car_to_gpt_config/privacy-policy.html;
+  при правке обновлять в обоих местах, этот файл сам по себе никуда не задеплоен.
+
+  Все языки на одной странице, по <article lang> на язык. Язык: ?lang=<код>
+  (его подставляет ссылка из панели расширения), иначе язык браузера, иначе
+  английский. Без JavaScript видна английская версия. Коды — те же, что в
+  extension/i18n.js. Текст должен совпадать по смыслу во всех языках: при
+  правке обновлять каждый <article>.
 -->
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Политика конфиденциальности — Автогараж</title>
+<title>Privacy Policy — AutoGarage</title>
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     max-width: 720px;
-    margin: 40px auto;
+    margin: 24px auto 40px;
     padding: 0 20px;
     line-height: 1.6;
     color: #1a1a1a;
   }
+  .lang-bar { display: flex; justify-content: flex-end; margin-bottom: 16px; }
+  .lang-bar select { font: inherit; font-size: 0.9em; padding: 4px 6px; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
   h1 { font-size: 1.5rem; margin-bottom: 0.2em; }
   h2 { font-size: 1.15rem; margin-top: 2em; }
   .updated { color: #666; font-size: 0.9em; margin-bottom: 2em; }
-  ul { padding-left: 1.3em; }
+  ul { padding-inline-start: 1.3em; }
   li { margin-bottom: 0.4em; }
-  code { background: #f2f2f2; padding: 0.1em 0.35em; border-radius: 3px; font-size: 0.92em; }
+  code { background: #f2f2f2; padding: 0.1em 0.35em; border-radius: 3px; font-size: 0.92em; direction: ltr; unicode-bidi: isolate; }
   a { color: #2563eb; }
+  [hidden] { display: none; }
 </style>
 </head>
 <body>
 
-<h1>Политика конфиденциальности — «Автогараж»</h1>
-<p class="updated">Дата последнего обновления: 25 августа 2026</p>
+<div class="lang-bar">
+  <label>🌐 <select id="lang" aria-label="Language">
+    <option value="en">English</option>
+    <option value="de">Deutsch</option>
+    <option value="ru">Русский</option>
+    <option value="uk">Українська</option>
+    <option value="pl">Polski</option>
+    <option value="tr">Türkçe</option>
+    <option value="es">Español</option>
+    <option value="fr">Français</option>
+    <option value="it">Italiano</option>
+    <option value="cs">Čeština</option>
+    <option value="pt">Português</option>
+    <option value="ar">العربية</option>
+  </select></label>
+</div>
 
-<p>
-  «Автогараж» — расширение для Chrome, которое сохраняет данные объявлений
-  с mobile.de и помогает сравнить несколько вариантов через Claude. Эта
-  страница описывает, какие данные расширение собирает и как их использует.
-</p>
+<article lang="en" data-title="Privacy Policy — AutoGarage">
+  <h1>Privacy Policy — AutoGarage</h1>
+  <p class="updated">Last updated: 28 September 2026</p>
+  <p>AutoGarage is a Chrome extension that saves car listings from mobile.de and helps you compare several of them in an AI chat of your choice. This page explains what data the extension handles and how.</p>
+  <h2>Cars you save</h2>
+  <ul>
+    <li>When you click “Save to AutoGarage” on a listing page, the extension reads the listing’s details from that page: title, price, first registration, mileage, specs, technical data, the seller’s description, seller type and address, and a link to the main photo. All of this is already publicly shown in the listing. You can check and edit it before saving and add your own note.</li>
+    <li>Saved cars, your notes, the “Your situation” text, your language choice and which cars are selected are stored <strong>only locally</strong> in your browser (<code>chrome.storage.local</code>). We do not send them to or store them on our servers.</li>
+    <li>They are deleted when you remove a car from the list or uninstall the extension.</li>
+  </ul>
+  <h2>Sending a comparison to an AI chat</h2>
+  <ul>
+    <li>When you click “Copy prompt” or “Compare in AI chat”, the extension builds a text request (prompt) from the cars you selected — including your notes and the “Your situation” text, if you filled them in.</li>
+    <li>“Copy prompt” only places it on your clipboard. “Compare in AI chat” opens the service you choose (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat or Alice) in a new tab and passes the prompt to it — in the page address or via the clipboard. This happens only when you click.</li>
+    <li>From then on the prompt is processed by that service under its own privacy policy. Do not put personal information you don’t want to share into your notes or the “Your situation” field.</li>
+  </ul>
+  <h2>Anonymous usage statistics</h2>
+  <p>The extension sends anonymous usage events through our own proxy server to Google Analytics 4 — for example: the panel was opened, a car was saved, the prompt was copied, an AI chat was opened (and which one), the language was changed, a banner was shown or clicked. This helps us understand which features are used and measure partner placements. Each event includes:</p>
+  <ul>
+    <li>a random anonymous identifier generated locally on install — not linked to your name, email or any account;</li>
+    <li>a session identifier — the start time of the current session; a new session starts after 30 minutes of inactivity;</li>
+    <li>the event name and a few technical parameters (number of cars, selected language, which AI chat or banner); for events about specific cars — the listing number, title and price from mobile.de (public listing data);</li>
+    <li>approximate location (country, region, city) that our server derives from your IP address — not precise coordinates and not GPS. The IP address itself is not passed on to Google Analytics.</li>
+  </ul>
+  <p>We do not collect your name, email, browsing history or the content of your conversations with AI chats. Data processing in Google Analytics is governed by <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>.</p>
+  <h2>Partner links and banners</h2>
+  <p>The extension may show partner (affiliate) links — in banners and in links under saved cars (for example, a vehicle history check with carVertical, loan or insurance offers). If you buy a product or service through such a link, we may receive a commission — the price for you does not change. The link opens on a third-party website, where that website’s own privacy policy applies. To show offers that apply in your country (for example, loans), the extension asks our server for your country, which it determines from your IP address; only the country code is returned, and nothing is stored.</p>
+  <h2>Extension permissions</h2>
+  <ul>
+    <li><code>storage</code> — to keep your saved cars and settings locally in the browser.</li>
+    <li><code>sidePanel</code> — to show the list of saved cars in Chrome’s side panel.</li>
+    <li>Access to mobile.de — to show the save button and a tab that opens the panel, and to read the listing data when you click “Save”.</li>
+    <li>Access to <code>edgrln.github.io</code> — to load the banner settings (data only, no code).</li>
+    <li>Access to <code>car-to-gpt.e-lakshin.workers.dev</code> — our proxy server for usage statistics.</li>
+  </ul>
+  <h2>We do not sell data</h2>
+  <p>Apart from the anonymous statistics in Google Analytics and the prompt you send to an AI chat yourself, no data is transferred anywhere or sold.</p>
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy. The date of the last update is shown at the top of the page.</p>
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Данные объявлений (машины, которые вы сохраняете)</h2>
-<ul>
-  <li>Когда вы нажимаете «Сохранить в Автогараж» на странице объявления,
-      расширение считывает с этой страницы название, цену, год, пробег,
-      описание продавца, фото и технические характеристики — то, что уже
-      публично показано в самом объявлении на mobile.de.</li>
-  <li>Эти данные хранятся <strong>только локально</strong>, в хранилище
-      браузера на вашем устройстве (<code>chrome.storage.local</code>).
-      Мы не передаём и не храним их на своих серверах.</li>
-  <li>Данные удаляются, когда вы убираете машину из списка в попапе или
-      удаляете расширение.</li>
-</ul>
+<article lang="de" data-title="Datenschutzerklärung — AutoGarage" hidden>
+  <h1>Datenschutzerklärung — AutoGarage</h1>
+  <p class="updated">Zuletzt aktualisiert: 28. September 2026</p>
+  <p>AutoGarage ist eine Chrome-Erweiterung, die Fahrzeuginserate von mobile.de speichert und Ihnen hilft, mehrere davon in einem KI-Chat Ihrer Wahl zu vergleichen. Hier steht, welche Daten die Erweiterung verarbeitet und wie.</p>
+  <h2>Gespeicherte Fahrzeuge</h2>
+  <ul>
+    <li>Wenn Sie auf einer Inseratsseite auf „In AutoGarage speichern“ klicken, liest die Erweiterung die Angaben des Inserats von dieser Seite: Titel, Preis, Erstzulassung, Kilometerstand, Ausstattung, technische Daten, Beschreibung des Verkäufers, Verkäufertyp und Adresse sowie einen Link zum Hauptfoto. All das ist im Inserat bereits öffentlich sichtbar. Vor dem Speichern können Sie die Angaben prüfen, bearbeiten und eine eigene Notiz hinzufügen.</li>
+    <li>Gespeicherte Fahrzeuge, Ihre Notizen, der Text „Ihre Situation“, die gewählte Sprache und die markierten Fahrzeuge werden <strong>nur lokal</strong> in Ihrem Browser gespeichert (<code>chrome.storage.local</code>). Wir übertragen sie nicht an unsere Server und speichern sie dort nicht.</li>
+    <li>Sie werden gelöscht, wenn Sie ein Fahrzeug aus der Liste entfernen oder die Erweiterung deinstallieren.</li>
+  </ul>
+  <h2>Vergleich an einen KI-Chat senden</h2>
+  <ul>
+    <li>Wenn Sie auf „Prompt kopieren“ oder „Im KI-Chat vergleichen“ klicken, erstellt die Erweiterung aus den ausgewählten Fahrzeugen eine Textanfrage (Prompt) — einschließlich Ihrer Notizen und des Textes „Ihre Situation“, sofern ausgefüllt.</li>
+    <li>„Prompt kopieren“ legt ihn nur in die Zwischenablage. „Im KI-Chat vergleichen“ öffnet den von Ihnen gewählten Dienst (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat oder Alice) in einem neuen Tab und übergibt ihm den Prompt — in der Seitenadresse oder über die Zwischenablage. Das geschieht nur auf Ihren Klick.</li>
+    <li>Ab dann verarbeitet dieser Dienst den Prompt gemäß seiner eigenen Datenschutzerklärung. Tragen Sie in Notizen und im Feld „Ihre Situation“ keine persönlichen Daten ein, die Sie nicht teilen möchten.</li>
+  </ul>
+  <h2>Anonyme Nutzungsstatistik</h2>
+  <p>Die Erweiterung sendet anonyme Nutzungsereignisse über unseren eigenen Proxy-Server an Google Analytics 4 — zum Beispiel: Panel geöffnet, Fahrzeug gespeichert, Prompt kopiert, KI-Chat geöffnet (und welcher), Sprache geändert, Banner angezeigt oder angeklickt. So verstehen wir, welche Funktionen genutzt werden, und können Partnerplatzierungen auswerten. Jedes Ereignis enthält:</p>
+  <ul>
+    <li>eine zufällige anonyme Kennung, die bei der Installation lokal erzeugt wird — nicht mit Ihrem Namen, Ihrer E-Mail oder einem Konto verknüpft;</li>
+    <li>eine Sitzungskennung — die Startzeit der aktuellen Sitzung; nach 30 Minuten Inaktivität beginnt eine neue Sitzung;</li>
+    <li>den Ereignisnamen und einige technische Parameter (Anzahl der Fahrzeuge, gewählte Sprache, welcher KI-Chat oder welches Banner); bei Ereignissen zu bestimmten Fahrzeugen — Inseratsnummer, Titel und Preis von mobile.de (öffentliche Inseratsdaten);</li>
+    <li>den ungefähren Standort (Land, Region, Stadt), den unser Server aus Ihrer IP-Adresse ableitet — keine genauen Koordinaten und kein GPS. Die IP-Adresse selbst wird nicht an Google Analytics weitergegeben.</li>
+  </ul>
+  <p>Wir erfassen weder Ihren Namen noch Ihre E-Mail, Ihren Browserverlauf oder den Inhalt Ihrer Unterhaltungen mit KI-Chats. Für die Datenverarbeitung in Google Analytics gilt die <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
+  <h2>Partnerlinks und Banner</h2>
+  <p>Die Erweiterung kann Partnerlinks (Affiliate-Links) anzeigen — in Bannern und in Links unter gespeicherten Fahrzeugen (zum Beispiel eine Fahrzeughistorie-Prüfung bei carVertical, Finanzierungs- oder Versicherungsangebote). Wenn Sie über einen solchen Link ein Produkt oder eine Dienstleistung kaufen, erhalten wir möglicherweise eine Provision — Ihr Preis ändert sich dadurch nicht. Der Link öffnet sich auf der Website eines Dritten, für die deren eigene Datenschutzerklärung gilt. Um Angebote anzuzeigen, die in Ihrem Land gelten (zum Beispiel Finanzierungen), fragt die Erweiterung bei unserem Server Ihr Land ab, das dieser aus Ihrer IP-Adresse ermittelt; zurückgegeben wird nur der Ländercode, gespeichert wird nichts.</p>
+  <h2>Berechtigungen der Erweiterung</h2>
+  <ul>
+    <li><code>storage</code> — gespeicherte Fahrzeuge und Einstellungen lokal im Browser aufbewahren.</li>
+    <li><code>sidePanel</code> — die Liste gespeicherter Fahrzeuge im Seitenbereich von Chrome anzeigen.</li>
+    <li>Zugriff auf mobile.de — den Speichern-Button und einen Reiter zum Öffnen des Panels anzeigen und die Inseratsdaten lesen, wenn Sie auf „Speichern“ klicken.</li>
+    <li>Zugriff auf <code>edgrln.github.io</code> — Laden der Banner-Einstellungen (nur Daten, kein Code).</li>
+    <li>Zugriff auf <code>car-to-gpt.e-lakshin.workers.dev</code> — unser Proxy-Server für die Nutzungsstatistik.</li>
+  </ul>
+  <h2>Wir verkaufen keine Daten</h2>
+  <p>Abgesehen von der anonymen Statistik in Google Analytics und dem Prompt, den Sie selbst an einen KI-Chat senden, werden keine Daten weitergegeben oder verkauft.</p>
+  <h2>Änderungen dieser Erklärung</h2>
+  <p>Wir können diese Erklärung aktualisieren. Das Datum der letzten Aktualisierung steht oben auf der Seite.</p>
+  <h2>Kontakt</h2>
+  <p>Fragen zu dieser Erklärung: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Анонимная статистика использования</h2>
-<p>
-  Расширение отправляет анонимные события использования (например: открытие
-  попапа, показ/клик по рекламному баннеру, копирование промпта, сохранение
-  варианта) через собственный сервер-прокси в Google Analytics 4. Это нужно,
-  чтобы понимать, какими функциями пользуются, и оценивать эффективность
-  партнёрских размещений.
-</p>
-<ul>
-  <li>С каждым событием передаётся случайный анонимный идентификатор
-      (сгенерирован локально, не связан с вашим именем, email или
-      аккаунтом), название события и несколько технических параметров
-      (например, сколько машин в списке, какой из баннеров показан).</li>
-  <li>Также передаётся приблизительная геолокация (страна/город/регион),
-      определяемая по IP-адресу на уровне сервера — не точные координаты,
-      не GPS.</li>
-  <li>Мы не собираем имя, email, историю посещений сайтов или что-либо ещё,
-      что могло бы лично идентифицировать вас.</li>
-  <li>Обработка данных в Google Analytics регулируется
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">политикой конфиденциальности Google</a>.</li>
-</ul>
+<article lang="ru" data-title="Политика конфиденциальности — «Автогараж»" hidden>
+  <h1>Политика конфиденциальности — «Автогараж»</h1>
+  <p class="updated">Дата последнего обновления: 28 сентября 2026</p>
+  <p>«Автогараж» — расширение для Chrome, которое сохраняет объявления с mobile.de и помогает сравнить несколько машин в ИИ-чате на ваш выбор. Здесь описано, какие данные обрабатывает расширение и как.</p>
+  <h2>Машины, которые вы сохраняете</h2>
+  <ul>
+    <li>Когда вы нажимаете «Сохранить в Автогараж» на странице объявления, расширение считывает с неё название, цену, дату первой регистрации, пробег, характеристики, технические данные, описание продавца, тип продавца и адрес, ссылку на главное фото. Всё это уже публично показано в объявлении. Перед сохранением данные можно проверить, исправить и добавить свою заметку.</li>
+    <li>Сохранённые машины, ваши заметки, текст «Ваша ситуация», выбранный язык и отмеченные машины хранятся <strong>только локально</strong> в браузере (<code>chrome.storage.local</code>). Мы не передаём и не храним их на своих серверах.</li>
+    <li>Данные удаляются, когда вы убираете машину из списка или удаляете расширение.</li>
+  </ul>
+  <h2>Отправка сравнения в ИИ-чат</h2>
+  <ul>
+    <li>По кнопкам «Скопировать промпт» и «Сравнить в ИИ-чате» расширение составляет текст запроса (промпт) из выбранных машин — вместе с вашими заметками и текстом «Ваша ситуация», если вы их заполнили.</li>
+    <li>«Скопировать промпт» только кладёт его в буфер обмена. «Сравнить в ИИ-чате» открывает выбранный вами сервис (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat или Алиса) в новой вкладке и передаёт ему промпт — в адресе страницы или через буфер обмена. Это происходит только по вашему клику.</li>
+    <li>Дальше промпт обрабатывает этот сервис по своей политике конфиденциальности. Не указывайте в заметках и в поле «Ваша ситуация» личные данные, которыми не хотите делиться.</li>
+  </ul>
+  <h2>Анонимная статистика использования</h2>
+  <p>Расширение отправляет анонимные события использования через наш сервер-прокси в Google Analytics 4 — например: открыта панель, сохранена машина, скопирован промпт, открыт ИИ-чат (и какой именно), сменён язык, показан или нажат баннер. Это нужно, чтобы понимать, какими функциями пользуются, и оценивать партнёрские размещения. С каждым событием передаются:</p>
+  <ul>
+    <li>случайный анонимный идентификатор, созданный локально при установке, — не связан с вашим именем, email или аккаунтом;</li>
+    <li>идентификатор сессии — время начала текущей сессии; новая сессия начинается после 30 минут бездействия;</li>
+    <li>название события и несколько технических параметров (число машин, выбранный язык, какой ИИ-чат или баннер); для событий о конкретных машинах — номер объявления, название и цена с mobile.de (публичные данные объявления);</li>
+    <li>приблизительное местоположение (страна, регион, город), которое наш сервер определяет по IP-адресу, — не точные координаты и не GPS. Сам IP-адрес в Google Analytics не передаётся.</li>
+  </ul>
+  <p>Мы не собираем имя, email, историю посещений сайтов и содержимое ваших диалогов с ИИ-чатами. Обработка данных в Google Analytics регулируется <a href="https://policies.google.com/privacy?hl=ru" target="_blank" rel="noopener noreferrer">политикой конфиденциальности Google</a>.</p>
+  <h2>Партнёрские ссылки и баннеры</h2>
+  <p>Расширение может показывать партнёрские (affiliate) ссылки — в баннерах и в ссылках под сохранёнными машинами (например, проверка истории авто в carVertical, предложения кредита или страховки). Если по такой ссылке вы купите товар или услугу, мы можем получить комиссию — цена для вас от этого не меняется. Ссылка открывается на сайте третьей стороны, где действует его собственная политика конфиденциальности. Чтобы показывать предложения, действующие в вашей стране (например, кредит), расширение запрашивает у нашего сервера вашу страну, которую он определяет по IP-адресу; возвращается только код страны, ничего не сохраняется.</p>
+  <h2>Разрешения расширения</h2>
+  <ul>
+    <li><code>storage</code> — хранить сохранённые машины и настройки локально в браузере.</li>
+    <li><code>sidePanel</code> — показывать список сохранённых машин в боковой панели Chrome.</li>
+    <li>Доступ к mobile.de — показать кнопку сохранения и язычок, открывающий панель, и считать данные объявления, когда вы нажимаете «Сохранить».</li>
+    <li>Доступ к <code>edgrln.github.io</code> — загрузка настроек баннера (только данные, не код).</li>
+    <li>Доступ к <code>car-to-gpt.e-lakshin.workers.dev</code> — наш сервер-прокси для статистики.</li>
+  </ul>
+  <h2>Мы не продаём данные</h2>
+  <p>Кроме анонимной статистики в Google Analytics и промпта, который вы сами отправляете в ИИ-чат, никакие данные никуда не передаются и не продаются.</p>
+  <h2>Изменения политики</h2>
+  <p>Мы можем обновлять эту политику. Дата последнего обновления указана вверху страницы.</p>
+  <h2>Связь</h2>
+  <p>Вопросы по этой политике: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Партнёрские ссылки и баннеры</h2>
-<p>
-  Расширение может показывать рекламные баннеры с партнёрскими
-  (affiliate) ссылками. Переход по такой ссылке открывается на сайте
-  третьей стороны — там уже действует политика конфиденциальности этого
-  сайта, мы за неё не отвечаем.
-</p>
+<article lang="uk" data-title="Політика конфіденційності — «Автогараж»" hidden>
+  <h1>Політика конфіденційності — «Автогараж»</h1>
+  <p class="updated">Дата останнього оновлення: 28 вересня 2026</p>
+  <p>«Автогараж» — розширення для Chrome, яке зберігає оголошення з mobile.de і допомагає порівняти кілька авто в ШІ-чаті на ваш вибір. Тут описано, які дані обробляє розширення і як.</p>
+  <h2>Авто, які ви зберігаєте</h2>
+  <ul>
+    <li>Коли ви натискаєте «Зберегти в Автогараж» на сторінці оголошення, розширення зчитує з неї назву, ціну, дату першої реєстрації, пробіг, характеристики, технічні дані, опис продавця, тип продавця й адресу, посилання на головне фото. Усе це вже публічно показано в оголошенні. Перед збереженням дані можна перевірити, виправити й додати власну нотатку.</li>
+    <li>Збережені авто, ваші нотатки, текст «Ваша ситуація», вибрана мова та позначені авто зберігаються <strong>лише локально</strong> у браузері (<code>chrome.storage.local</code>). Ми не передаємо й не зберігаємо їх на своїх серверах.</li>
+    <li>Дані видаляються, коли ви прибираєте авто зі списку або видаляєте розширення.</li>
+  </ul>
+  <h2>Надсилання порівняння в ШІ-чат</h2>
+  <ul>
+    <li>За кнопками «Скопіювати промпт» і «Порівняти в ШІ-чаті» розширення складає текст запиту (промпт) з вибраних авто — разом із вашими нотатками й текстом «Ваша ситуація», якщо ви їх заповнили.</li>
+    <li>«Скопіювати промпт» лише кладе його в буфер обміну. «Порівняти в ШІ-чаті» відкриває вибраний вами сервіс (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat або Аліса) у новій вкладці й передає йому промпт — в адресі сторінки або через буфер обміну. Це відбувається лише після вашого кліку.</li>
+    <li>Далі промпт обробляє цей сервіс згідно зі своєю політикою конфіденційності. Не вказуйте в нотатках і в полі «Ваша ситуація» особисті дані, якими не хочете ділитися.</li>
+  </ul>
+  <h2>Анонімна статистика використання</h2>
+  <p>Розширення надсилає анонімні події використання через наш сервер-проксі до Google Analytics 4 — наприклад: відкрито панель, збережено авто, скопійовано промпт, відкрито ШІ-чат (і який саме), змінено мову, показано або натиснуто банер. Це потрібно, щоб розуміти, якими функціями користуються, і оцінювати партнерські розміщення. З кожною подією передаються:</p>
+  <ul>
+    <li>випадковий анонімний ідентифікатор, створений локально під час встановлення, — не пов’язаний з вашим ім’ям, email чи обліковим записом;</li>
+    <li>ідентифікатор сесії — час початку поточної сесії; нова сесія починається після 30 хвилин бездіяльності;</li>
+    <li>назва події та кілька технічних параметрів (кількість авто, вибрана мова, який ШІ-чат чи банер); для подій щодо конкретних авто — номер оголошення, назва й ціна з mobile.de (публічні дані оголошення);</li>
+    <li>приблизне місцезнаходження (країна, регіон, місто), яке наш сервер визначає за IP-адресою, — не точні координати й не GPS. Сама IP-адреса до Google Analytics не передається.</li>
+  </ul>
+  <p>Ми не збираємо ім’я, email, історію відвідування сайтів і вміст ваших діалогів із ШІ-чатами. Обробка даних у Google Analytics регулюється <a href="https://policies.google.com/privacy?hl=uk" target="_blank" rel="noopener noreferrer">політикою конфіденційності Google</a>.</p>
+  <h2>Партнерські посилання й банери</h2>
+  <p>Розширення може показувати партнерські (affiliate) посилання — у банерах і в посиланнях під збереженими авто (наприклад, перевірка історії авто в carVertical, пропозиції кредиту чи страхування). Якщо за таким посиланням ви купите товар чи послугу, ми можемо отримати комісію — ціна для вас від цього не змінюється. Посилання відкривається на сайті третьої сторони, де діє його власна політика конфіденційності. Щоб показувати пропозиції, які діють у вашій країні (наприклад, кредит), розширення запитує в нашого сервера вашу країну, яку він визначає за IP-адресою; повертається лише код країни, нічого не зберігається.</p>
+  <h2>Дозволи розширення</h2>
+  <ul>
+    <li><code>storage</code> — зберігати збережені авто й налаштування локально в браузері.</li>
+    <li><code>sidePanel</code> — показувати список збережених авто на бічній панелі Chrome.</li>
+    <li>Доступ до mobile.de — показати кнопку збереження та вкладку, що відкриває панель, і зчитати дані оголошення, коли ви натискаєте «Зберегти».</li>
+    <li>Доступ до <code>edgrln.github.io</code> — завантаження налаштувань банера (лише дані, не код).</li>
+    <li>Доступ до <code>car-to-gpt.e-lakshin.workers.dev</code> — наш сервер-проксі для статистики.</li>
+  </ul>
+  <h2>Ми не продаємо дані</h2>
+  <p>Окрім анонімної статистики в Google Analytics і промпта, який ви самі надсилаєте в ШІ-чат, жодні дані нікуди не передаються й не продаються.</p>
+  <h2>Зміни політики</h2>
+  <p>Ми можемо оновлювати цю політику. Дату останнього оновлення вказано вгорі сторінки.</p>
+  <h2>Зв’язок</h2>
+  <p>Питання щодо цієї політики: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Права доступа расширения</h2>
-<ul>
-  <li><code>storage</code> — для хранения сохранённых машин локально
-      в браузере.</li>
-  <li>Доступ к страницам mobile.de — чтобы считывать данные объявления
-      по вашему запросу (только по клику на кнопку сохранения).</li>
-  <li>Доступ к хостингу конфига баннера и своему серверу-прокси
-      аналитики — оба перечислены и обоснованы в форме Chrome Web Store.</li>
-</ul>
+<article lang="pl" data-title="Polityka prywatności — AutoGarage" hidden>
+  <h1>Polityka prywatności — AutoGarage</h1>
+  <p class="updated">Ostatnia aktualizacja: 28 września 2026</p>
+  <p>AutoGarage to rozszerzenie Chrome, które zapisuje ogłoszenia samochodowe z mobile.de i pomaga porównać kilka z nich w wybranym czacie AI. Ta strona wyjaśnia, jakie dane przetwarza rozszerzenie i w jaki sposób.</p>
+  <h2>Zapisywane samochody</h2>
+  <ul>
+    <li>Gdy klikniesz „Zapisz w AutoGarage” na stronie ogłoszenia, rozszerzenie odczytuje z niej dane ogłoszenia: tytuł, cenę, datę pierwszej rejestracji, przebieg, wyposażenie, dane techniczne, opis sprzedającego, typ sprzedającego i adres oraz link do głównego zdjęcia. Wszystko to jest już publicznie widoczne w ogłoszeniu. Przed zapisaniem możesz sprawdzić i poprawić dane oraz dodać własną notatkę.</li>
+    <li>Zapisane samochody, Twoje notatki, tekst „Twoja sytuacja”, wybrany język i zaznaczone samochody są przechowywane <strong>wyłącznie lokalnie</strong> w przeglądarce (<code>chrome.storage.local</code>). Nie wysyłamy ich na nasze serwery ani tam nie przechowujemy.</li>
+    <li>Dane są usuwane, gdy usuniesz samochód z listy lub odinstalujesz rozszerzenie.</li>
+  </ul>
+  <h2>Wysyłanie porównania do czatu AI</h2>
+  <ul>
+    <li>Po kliknięciu „Kopiuj prompt” lub „Porównaj w czacie AI” rozszerzenie tworzy z wybranych samochodów zapytanie tekstowe (prompt) — razem z Twoimi notatkami i tekstem „Twoja sytuacja”, jeśli je wypełniłeś.</li>
+    <li>„Kopiuj prompt” jedynie umieszcza go w schowku. „Porównaj w czacie AI” otwiera wybraną usługę (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat lub Alice) w nowej karcie i przekazuje jej prompt — w adresie strony lub przez schowek. Dzieje się to tylko po Twoim kliknięciu.</li>
+    <li>Od tego momentu prompt przetwarza ta usługa zgodnie z własną polityką prywatności. Nie wpisuj w notatkach ani w polu „Twoja sytuacja” danych osobowych, których nie chcesz udostępniać.</li>
+  </ul>
+  <h2>Anonimowe statystyki użytkowania</h2>
+  <p>Rozszerzenie wysyła anonimowe zdarzenia użytkowania przez nasz własny serwer proxy do Google Analytics 4 — na przykład: otwarto panel, zapisano samochód, skopiowano prompt, otwarto czat AI (i który), zmieniono język, wyświetlono lub kliknięto baner. Dzięki temu wiemy, z których funkcji się korzysta, i możemy oceniać umieszczenia partnerskie. Każde zdarzenie zawiera:</p>
+  <ul>
+    <li>losowy anonimowy identyfikator wygenerowany lokalnie podczas instalacji — niepowiązany z Twoim imieniem, e-mailem ani kontem;</li>
+    <li>identyfikator sesji — czas rozpoczęcia bieżącej sesji; nowa sesja zaczyna się po 30 minutach bezczynności;</li>
+    <li>nazwę zdarzenia i kilka parametrów technicznych (liczba samochodów, wybrany język, który czat AI lub baner); w zdarzeniach dotyczących konkretnych samochodów — numer ogłoszenia, tytuł i cenę z mobile.de (publiczne dane ogłoszenia);</li>
+    <li>przybliżoną lokalizację (kraj, region, miasto), którą nasz serwer ustala na podstawie adresu IP — nie dokładne współrzędne i nie GPS. Sam adres IP nie jest przekazywany do Google Analytics.</li>
+  </ul>
+  <p>Nie zbieramy imienia, e-maila, historii przeglądania ani treści Twoich rozmów z czatami AI. Przetwarzanie danych w Google Analytics podlega <a href="https://policies.google.com/privacy?hl=pl" target="_blank" rel="noopener noreferrer">Polityce prywatności Google</a>.</p>
+  <h2>Linki partnerskie i banery</h2>
+  <p>Rozszerzenie może wyświetlać linki partnerskie (afiliacyjne) — w banerach oraz w linkach pod zapisanymi samochodami (na przykład sprawdzenie historii pojazdu w carVertical, oferty kredytu lub ubezpieczenia). Jeśli kupisz produkt lub usługę przez taki link, możemy otrzymać prowizję — Twoja cena się nie zmienia. Link otwiera się na stronie podmiotu trzeciego, gdzie obowiązuje jej własna polityka prywatności. Aby pokazywać oferty obowiązujące w Twoim kraju (na przykład kredyty), rozszerzenie pyta nasz serwer o Twój kraj, który ustala on na podstawie adresu IP; zwracany jest tylko kod kraju, nic nie jest zapisywane.</p>
+  <h2>Uprawnienia rozszerzenia</h2>
+  <ul>
+    <li><code>storage</code> — przechowywanie zapisanych samochodów i ustawień lokalnie w przeglądarce.</li>
+    <li><code>sidePanel</code> — wyświetlanie listy zapisanych samochodów w panelu bocznym Chrome.</li>
+    <li>Dostęp do mobile.de — wyświetlenie przycisku zapisu i zakładki otwierającej panel oraz odczyt danych ogłoszenia po kliknięciu „Zapisz”.</li>
+    <li>Dostęp do <code>edgrln.github.io</code> — pobieranie ustawień banera (tylko dane, bez kodu).</li>
+    <li>Dostęp do <code>car-to-gpt.e-lakshin.workers.dev</code> — nasz serwer proxy do statystyk.</li>
+  </ul>
+  <h2>Nie sprzedajemy danych</h2>
+  <p>Poza anonimowymi statystykami w Google Analytics i promptem, który sam wysyłasz do czatu AI, żadne dane nie są nigdzie przekazywane ani sprzedawane.</p>
+  <h2>Zmiany polityki</h2>
+  <p>Możemy aktualizować tę politykę. Data ostatniej aktualizacji jest podana na górze strony.</p>
+  <h2>Kontakt</h2>
+  <p>Pytania dotyczące tej polityki: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Мы не продаём и не передаём данные третьим лицам</h2>
-<p>
-  За исключением анонимной статистики в Google Analytics, описанной выше,
-  никакие данные никуда не передаются и не продаются.
-</p>
+<article lang="tr" data-title="Gizlilik Politikası — AutoGarage" hidden>
+  <h1>Gizlilik Politikası — AutoGarage</h1>
+  <p class="updated">Son güncelleme: 28 Eylül 2026</p>
+  <p>AutoGarage, mobile.de’deki araç ilanlarını kaydeden ve birkaçını seçtiğiniz bir yapay zekâ sohbetinde karşılaştırmanıza yardımcı olan bir Chrome uzantısıdır. Bu sayfa, uzantının hangi verileri nasıl işlediğini açıklar.</p>
+  <h2>Kaydettiğiniz araçlar</h2>
+  <ul>
+    <li>Bir ilan sayfasında “AutoGarage’a kaydet”e tıkladığınızda uzantı ilan bilgilerini o sayfadan okur: başlık, fiyat, ilk tescil, kilometre, donanım, teknik veriler, satıcının açıklaması, satıcı türü ve adresi ile ana fotoğrafın bağlantısı. Bunların hepsi ilanda zaten herkese açık olarak gösterilir. Kaydetmeden önce bilgileri kontrol edip düzenleyebilir ve kendi notunuzu ekleyebilirsiniz.</li>
+    <li>Kaydedilen araçlar, notlarınız, “Durumunuz” metni, dil seçiminiz ve seçili araçlar tarayıcınızda <strong>yalnızca yerel olarak</strong> saklanır (<code>chrome.storage.local</code>). Bunları sunucularımıza göndermez ve orada saklamayız.</li>
+    <li>Bir aracı listeden kaldırdığınızda veya uzantıyı kaldırdığınızda silinirler.</li>
+  </ul>
+  <h2>Karşılaştırmayı bir yapay zekâ sohbetine gönderme</h2>
+  <ul>
+    <li>“Prompt’u kopyala” veya “Yapay zekâ sohbetinde karşılaştır”a tıkladığınızda uzantı, seçtiğiniz araçlardan bir metin isteği (prompt) oluşturur — doldurduysanız notlarınız ve “Durumunuz” metni de dahil.</li>
+    <li>“Prompt’u kopyala” onu yalnızca panoya koyar. “Yapay zekâ sohbetinde karşılaştır”, seçtiğiniz hizmeti (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat veya Alice) yeni bir sekmede açar ve prompt’u ona iletir — sayfa adresinde veya pano aracılığıyla. Bu yalnızca siz tıkladığınızda olur.</li>
+    <li>Bundan sonra prompt o hizmet tarafından kendi gizlilik politikasına göre işlenir. Notlarınıza veya “Durumunuz” alanına paylaşmak istemediğiniz kişisel bilgiler yazmayın.</li>
+  </ul>
+  <h2>Anonim kullanım istatistikleri</h2>
+  <p>Uzantı, anonim kullanım olaylarını kendi proxy sunucumuz üzerinden Google Analytics 4’e gönderir — örneğin: panel açıldı, araç kaydedildi, prompt kopyalandı, bir yapay zekâ sohbeti açıldı (hangisi olduğu), dil değiştirildi, bir banner gösterildi veya tıklandı. Bu, hangi özelliklerin kullanıldığını anlamamıza ve iş ortağı yerleşimlerini ölçmemize yardımcı olur. Her olay şunları içerir:</p>
+  <ul>
+    <li>kurulumda yerel olarak oluşturulan rastgele anonim bir kimlik — adınız, e-postanız veya herhangi bir hesapla bağlantılı değildir;</li>
+    <li>bir oturum kimliği — geçerli oturumun başlangıç zamanı; 30 dakika hareketsizlikten sonra yeni bir oturum başlar;</li>
+    <li>olay adı ve birkaç teknik parametre (araç sayısı, seçilen dil, hangi yapay zekâ sohbeti veya banner); belirli araçlarla ilgili olaylarda — mobile.de’deki ilan numarası, başlık ve fiyat (herkese açık ilan verileri);</li>
+    <li>sunucumuzun IP adresinizden çıkardığı yaklaşık konum (ülke, bölge, şehir) — kesin koordinatlar veya GPS değil. IP adresinin kendisi Google Analytics’e iletilmez.</li>
+  </ul>
+  <p>Adınızı, e-postanızı, tarama geçmişinizi veya yapay zekâ sohbetleriyle yaptığınız konuşmaların içeriğini toplamayız. Google Analytics’teki veri işleme <a href="https://policies.google.com/privacy?hl=tr" target="_blank" rel="noopener noreferrer">Google Gizlilik Politikası’na</a> tabidir.</p>
+  <h2>İş ortağı bağlantıları ve bannerlar</h2>
+  <p>Uzantı iş ortağı (affiliate) bağlantıları gösterebilir — bannerlarda ve kaydedilen araçların altındaki bağlantılarda (örneğin carVertical ile araç geçmişi kontrolü, kredi veya sigorta teklifleri). Böyle bir bağlantı üzerinden bir ürün veya hizmet satın alırsanız komisyon alabiliriz — sizin için fiyat değişmez. Bağlantı, kendi gizlilik politikasının geçerli olduğu üçüncü taraf bir web sitesinde açılır. Ülkenizde geçerli teklifleri (örneğin krediler) gösterebilmek için uzantı, IP adresinizden belirlenen ülkenizi sunucumuzdan ister; yalnızca ülke kodu döndürülür ve hiçbir şey saklanmaz.</p>
+  <h2>Uzantı izinleri</h2>
+  <ul>
+    <li><code>storage</code> — kaydedilen araçları ve ayarları tarayıcıda yerel olarak saklamak için.</li>
+    <li><code>sidePanel</code> — kaydedilen araçların listesini Chrome’un yan panelinde göstermek için.</li>
+    <li>mobile.de erişimi — kaydet düğmesini ve paneli açan bir sekmeyi göstermek ve “Kaydet”e tıkladığınızda ilan verilerini okumak için.</li>
+    <li><code>edgrln.github.io</code> erişimi — banner ayarlarını yüklemek için (yalnızca veri, kod değil).</li>
+    <li><code>car-to-gpt.e-lakshin.workers.dev</code> erişimi — kullanım istatistikleri için proxy sunucumuz.</li>
+  </ul>
+  <h2>Veri satmıyoruz</h2>
+  <p>Google Analytics’teki anonim istatistikler ve bir yapay zekâ sohbetine kendinizin gönderdiği prompt dışında hiçbir veri hiçbir yere aktarılmaz veya satılmaz.</p>
+  <h2>Bu politikadaki değişiklikler</h2>
+  <p>Bu politikayı güncelleyebiliriz. Son güncelleme tarihi sayfanın üst kısmında gösterilir.</p>
+  <h2>İletişim</h2>
+  <p>Bu politikayla ilgili sorular: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
 
-<h2>Связь</h2>
-<p>
-  Вопросы по этой политике — <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.
-</p>
+<article lang="es" data-title="Política de privacidad — AutoGarage" hidden>
+  <h1>Política de privacidad — AutoGarage</h1>
+  <p class="updated">Última actualización: 28 de septiembre de 2026</p>
+  <p>AutoGarage es una extensión de Chrome que guarda anuncios de coches de mobile.de y te ayuda a comparar varios en el chat de IA que elijas. Esta página explica qué datos trata la extensión y cómo.</p>
+  <h2>Coches que guardas</h2>
+  <ul>
+    <li>Cuando haces clic en «Guardar en AutoGarage» en la página de un anuncio, la extensión lee los datos del anuncio de esa página: título, precio, primera matriculación, kilometraje, equipamiento, datos técnicos, descripción del vendedor, tipo de vendedor y dirección, y un enlace a la foto principal. Todo esto ya se muestra públicamente en el anuncio. Antes de guardar puedes revisar y editar los datos y añadir tu propia nota.</li>
+    <li>Los coches guardados, tus notas, el texto «Tu situación», el idioma elegido y los coches seleccionados se guardan <strong>solo localmente</strong> en tu navegador (<code>chrome.storage.local</code>). No los enviamos ni los almacenamos en nuestros servidores.</li>
+    <li>Se eliminan cuando quitas un coche de la lista o desinstalas la extensión.</li>
+  </ul>
+  <h2>Enviar una comparación a un chat de IA</h2>
+  <ul>
+    <li>Cuando haces clic en «Copiar prompt» o «Comparar en un chat de IA», la extensión crea una solicitud de texto (prompt) con los coches seleccionados, incluidas tus notas y el texto «Tu situación» si los has rellenado.</li>
+    <li>«Copiar prompt» solo lo coloca en el portapapeles. «Comparar en un chat de IA» abre el servicio que elijas (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat o Alice) en una pestaña nueva y le pasa el prompt, en la dirección de la página o a través del portapapeles. Esto solo ocurre cuando haces clic.</li>
+    <li>A partir de ahí, ese servicio trata el prompt según su propia política de privacidad. No incluyas en tus notas ni en el campo «Tu situación» datos personales que no quieras compartir.</li>
+  </ul>
+  <h2>Estadísticas de uso anónimas</h2>
+  <p>La extensión envía eventos de uso anónimos a través de nuestro propio servidor proxy a Google Analytics 4; por ejemplo: se abrió el panel, se guardó un coche, se copió el prompt, se abrió un chat de IA (y cuál), se cambió el idioma, se mostró o se pulsó un banner. Esto nos ayuda a entender qué funciones se usan y a medir las ubicaciones de socios. Cada evento incluye:</p>
+  <ul>
+    <li>un identificador anónimo aleatorio generado localmente al instalar, no vinculado a tu nombre, correo electrónico ni a ninguna cuenta;</li>
+    <li>un identificador de sesión: la hora de inicio de la sesión actual; tras 30 minutos de inactividad empieza una sesión nueva;</li>
+    <li>el nombre del evento y algunos parámetros técnicos (número de coches, idioma elegido, qué chat de IA o banner); en los eventos sobre coches concretos, el número de anuncio, el título y el precio de mobile.de (datos públicos del anuncio);</li>
+    <li>la ubicación aproximada (país, región, ciudad) que nuestro servidor deduce de tu dirección IP, no coordenadas exactas ni GPS. La dirección IP en sí no se transmite a Google Analytics.</li>
+  </ul>
+  <p>No recopilamos tu nombre, correo electrónico, historial de navegación ni el contenido de tus conversaciones con chats de IA. El tratamiento de datos en Google Analytics se rige por la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</p>
+  <h2>Enlaces de afiliados y banners</h2>
+  <p>La extensión puede mostrar enlaces de afiliados: en banners y en enlaces bajo los coches guardados (por ejemplo, la comprobación del historial del vehículo con carVertical, ofertas de financiación o de seguro). Si compras un producto o servicio a través de uno de ellos, podemos recibir una comisión; el precio para ti no cambia. El enlace se abre en un sitio web de terceros, donde se aplica su propia política de privacidad. Para mostrar ofertas válidas en tu país (por ejemplo, financiación), la extensión pregunta a nuestro servidor tu país, que este determina a partir de tu dirección IP; solo se devuelve el código del país y no se guarda nada.</p>
+  <h2>Permisos de la extensión</h2>
+  <ul>
+    <li><code>storage</code>: guardar localmente en el navegador los coches y la configuración.</li>
+    <li><code>sidePanel</code>: mostrar la lista de coches guardados en el panel lateral de Chrome.</li>
+    <li>Acceso a mobile.de: mostrar el botón de guardar y una pestaña que abre el panel, y leer los datos del anuncio cuando haces clic en «Guardar».</li>
+    <li>Acceso a <code>edgrln.github.io</code>: cargar la configuración de los banners (solo datos, no código).</li>
+    <li>Acceso a <code>car-to-gpt.e-lakshin.workers.dev</code>: nuestro servidor proxy para las estadísticas de uso.</li>
+  </ul>
+  <h2>No vendemos datos</h2>
+  <p>Aparte de las estadísticas anónimas en Google Analytics y del prompt que tú mismo envías a un chat de IA, no se transfiere ni se vende ningún dato.</p>
+  <h2>Cambios en esta política</h2>
+  <p>Podemos actualizar esta política. La fecha de la última actualización figura en la parte superior de la página.</p>
+  <h2>Contacto</h2>
+  <p>Preguntas sobre esta política: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<article lang="fr" data-title="Politique de confidentialité — AutoGarage" hidden>
+  <h1>Politique de confidentialité — AutoGarage</h1>
+  <p class="updated">Dernière mise à jour : 28 septembre 2026</p>
+  <p>AutoGarage est une extension Chrome qui enregistre des annonces automobiles de mobile.de et vous aide à en comparer plusieurs dans le chat IA de votre choix. Cette page explique quelles données l’extension traite et comment.</p>
+  <h2>Les voitures que vous enregistrez</h2>
+  <ul>
+    <li>Lorsque vous cliquez sur « Enregistrer dans AutoGarage » sur une page d’annonce, l’extension lit les informations de l’annonce sur cette page : titre, prix, première immatriculation, kilométrage, équipements, données techniques, description du vendeur, type de vendeur et adresse, ainsi qu’un lien vers la photo principale. Tout cela est déjà affiché publiquement dans l’annonce. Avant l’enregistrement, vous pouvez vérifier et modifier ces informations et ajouter votre propre note.</li>
+    <li>Les voitures enregistrées, vos notes, le texte « Votre situation », la langue choisie et les voitures sélectionnées sont stockés <strong>uniquement en local</strong> dans votre navigateur (<code>chrome.storage.local</code>). Nous ne les envoyons pas à nos serveurs et ne les y stockons pas.</li>
+    <li>Ils sont supprimés lorsque vous retirez une voiture de la liste ou désinstallez l’extension.</li>
+  </ul>
+  <h2>Envoyer une comparaison à un chat IA</h2>
+  <ul>
+    <li>Lorsque vous cliquez sur « Copier le prompt » ou « Comparer dans un chat IA », l’extension crée une requête textuelle (prompt) à partir des voitures sélectionnées, y compris vos notes et le texte « Votre situation » si vous les avez remplis.</li>
+    <li>« Copier le prompt » le place seulement dans le presse-papiers. « Comparer dans un chat IA » ouvre le service de votre choix (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat ou Alice) dans un nouvel onglet et lui transmet le prompt, dans l’adresse de la page ou via le presse-papiers. Cela ne se produit que lorsque vous cliquez.</li>
+    <li>Dès lors, le prompt est traité par ce service selon sa propre politique de confidentialité. N’indiquez pas dans vos notes ni dans le champ « Votre situation » des données personnelles que vous ne souhaitez pas partager.</li>
+  </ul>
+  <h2>Statistiques d’utilisation anonymes</h2>
+  <p>L’extension envoie des événements d’utilisation anonymes via notre propre serveur proxy à Google Analytics 4 — par exemple : panneau ouvert, voiture enregistrée, prompt copié, chat IA ouvert (et lequel), langue modifiée, bannière affichée ou cliquée. Cela nous aide à comprendre quelles fonctionnalités sont utilisées et à mesurer les emplacements partenaires. Chaque événement contient :</p>
+  <ul>
+    <li>un identifiant anonyme aléatoire généré localement à l’installation — non lié à votre nom, à votre e-mail ni à un compte ;</li>
+    <li>un identifiant de session — l’heure de début de la session en cours ; une nouvelle session commence après 30 minutes d’inactivité ;</li>
+    <li>le nom de l’événement et quelques paramètres techniques (nombre de voitures, langue choisie, quel chat IA ou quelle bannière) ; pour les événements liés à des voitures précises — le numéro d’annonce, le titre et le prix sur mobile.de (données publiques de l’annonce) ;</li>
+    <li>une localisation approximative (pays, région, ville) que notre serveur déduit de votre adresse IP — pas de coordonnées précises ni de GPS. L’adresse IP elle-même n’est pas transmise à Google Analytics.</li>
+  </ul>
+  <p>Nous ne collectons ni votre nom, ni votre e-mail, ni votre historique de navigation, ni le contenu de vos conversations avec les chats IA. Le traitement des données dans Google Analytics est régi par les <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">Règles de confidentialité de Google</a>.</p>
+  <h2>Liens partenaires et bannières</h2>
+  <p>L’extension peut afficher des liens partenaires (d’affiliation) — dans des bannières et dans des liens sous les voitures enregistrées (par exemple, une vérification de l’historique du véhicule avec carVertical, des offres de crédit ou d’assurance). Si vous achetez un produit ou un service via un tel lien, nous pouvons percevoir une commission — le prix pour vous ne change pas. Le lien s’ouvre sur un site tiers, où s’applique sa propre politique de confidentialité. Pour afficher des offres valables dans votre pays (par exemple un crédit), l’extension demande à notre serveur votre pays, qu’il détermine à partir de votre adresse IP ; seul le code du pays est renvoyé, rien n’est conservé.</p>
+  <h2>Autorisations de l’extension</h2>
+  <ul>
+    <li><code>storage</code> — conserver les voitures enregistrées et les réglages localement dans le navigateur.</li>
+    <li><code>sidePanel</code> — afficher la liste des voitures enregistrées dans le panneau latéral de Chrome.</li>
+    <li>Accès à mobile.de — afficher le bouton d’enregistrement et un onglet qui ouvre le panneau, et lire les données de l’annonce lorsque vous cliquez sur « Enregistrer ».</li>
+    <li>Accès à <code>edgrln.github.io</code> — chargement des réglages des bannières (données uniquement, pas de code).</li>
+    <li>Accès à <code>car-to-gpt.e-lakshin.workers.dev</code> — notre serveur proxy pour les statistiques d’utilisation.</li>
+  </ul>
+  <h2>Nous ne vendons pas de données</h2>
+  <p>En dehors des statistiques anonymes dans Google Analytics et du prompt que vous envoyez vous-même à un chat IA, aucune donnée n’est transmise ni vendue.</p>
+  <h2>Modifications de cette politique</h2>
+  <p>Nous pouvons mettre à jour cette politique. La date de la dernière mise à jour figure en haut de la page.</p>
+  <h2>Contact</h2>
+  <p>Questions sur cette politique : <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<article lang="it" data-title="Informativa sulla privacy — AutoGarage" hidden>
+  <h1>Informativa sulla privacy — AutoGarage</h1>
+  <p class="updated">Ultimo aggiornamento: 28 settembre 2026</p>
+  <p>AutoGarage è un’estensione di Chrome che salva gli annunci auto di mobile.de e ti aiuta a confrontarne diversi nella chat IA che preferisci. Questa pagina spiega quali dati tratta l’estensione e come.</p>
+  <h2>Le auto che salvi</h2>
+  <ul>
+    <li>Quando fai clic su «Salva in AutoGarage» nella pagina di un annuncio, l’estensione legge i dati dell’annuncio da quella pagina: titolo, prezzo, prima immatricolazione, chilometraggio, dotazioni, dati tecnici, descrizione del venditore, tipo di venditore e indirizzo, e un link alla foto principale. Tutto ciò è già mostrato pubblicamente nell’annuncio. Prima di salvare puoi controllare e modificare i dati e aggiungere una tua nota.</li>
+    <li>Le auto salvate, le tue note, il testo «La tua situazione», la lingua scelta e le auto selezionate sono conservati <strong>solo localmente</strong> nel browser (<code>chrome.storage.local</code>). Non li inviamo ai nostri server né li conserviamo lì.</li>
+    <li>Vengono eliminati quando rimuovi un’auto dall’elenco o disinstalli l’estensione.</li>
+  </ul>
+  <h2>Invio di un confronto a una chat IA</h2>
+  <ul>
+    <li>Quando fai clic su «Copia prompt» o «Confronta in una chat IA», l’estensione crea una richiesta testuale (prompt) dalle auto selezionate, comprese le tue note e il testo «La tua situazione», se li hai compilati.</li>
+    <li>«Copia prompt» lo mette solo negli appunti. «Confronta in una chat IA» apre il servizio che scegli (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat o Alice) in una nuova scheda e gli passa il prompt, nell’indirizzo della pagina o tramite gli appunti. Ciò avviene solo quando fai clic.</li>
+    <li>Da quel momento il prompt è trattato da quel servizio secondo la propria informativa sulla privacy. Non inserire nelle note o nel campo «La tua situazione» dati personali che non vuoi condividere.</li>
+  </ul>
+  <h2>Statistiche d’uso anonime</h2>
+  <p>L’estensione invia eventi d’uso anonimi tramite il nostro server proxy a Google Analytics 4 — ad esempio: pannello aperto, auto salvata, prompt copiato, chat IA aperta (e quale), lingua cambiata, banner mostrato o cliccato. Ci aiuta a capire quali funzioni vengono usate e a misurare i posizionamenti dei partner. Ogni evento include:</p>
+  <ul>
+    <li>un identificativo anonimo casuale generato localmente all’installazione — non collegato al tuo nome, alla tua e-mail o a un account;</li>
+    <li>un identificativo di sessione — l’ora di inizio della sessione corrente; dopo 30 minuti di inattività inizia una nuova sessione;</li>
+    <li>il nome dell’evento e alcuni parametri tecnici (numero di auto, lingua scelta, quale chat IA o banner); per gli eventi relativi ad auto specifiche — numero dell’annuncio, titolo e prezzo da mobile.de (dati pubblici dell’annuncio);</li>
+    <li>la posizione approssimativa (paese, regione, città) che il nostro server ricava dal tuo indirizzo IP — non coordinate precise né GPS. L’indirizzo IP stesso non viene trasmesso a Google Analytics.</li>
+  </ul>
+  <p>Non raccogliamo il tuo nome, la tua e-mail, la cronologia di navigazione né il contenuto delle tue conversazioni con le chat IA. Il trattamento dei dati in Google Analytics è regolato dalle <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener noreferrer">Norme sulla privacy di Google</a>.</p>
+  <h2>Link di affiliazione e banner</h2>
+  <p>L’estensione può mostrare link di affiliazione — nei banner e nei link sotto le auto salvate (ad esempio la verifica della storia del veicolo con carVertical, offerte di finanziamento o di assicurazione). Se acquisti un prodotto o un servizio tramite uno di questi link, potremmo ricevere una commissione — il prezzo per te non cambia. Il link si apre su un sito di terzi, dove vale la sua informativa sulla privacy. Per mostrare offerte valide nel tuo paese (ad esempio finanziamenti), l’estensione chiede al nostro server il tuo paese, che viene determinato dal tuo indirizzo IP; viene restituito solo il codice del paese e non viene salvato nulla.</p>
+  <h2>Autorizzazioni dell’estensione</h2>
+  <ul>
+    <li><code>storage</code> — conservare localmente nel browser le auto salvate e le impostazioni.</li>
+    <li><code>sidePanel</code> — mostrare l’elenco delle auto salvate nel pannello laterale di Chrome.</li>
+    <li>Accesso a mobile.de — mostrare il pulsante di salvataggio e una linguetta che apre il pannello, e leggere i dati dell’annuncio quando fai clic su «Salva».</li>
+    <li>Accesso a <code>edgrln.github.io</code> — caricamento delle impostazioni dei banner (solo dati, nessun codice).</li>
+    <li>Accesso a <code>car-to-gpt.e-lakshin.workers.dev</code> — il nostro server proxy per le statistiche d’uso.</li>
+  </ul>
+  <h2>Non vendiamo dati</h2>
+  <p>A parte le statistiche anonime in Google Analytics e il prompt che invii tu stesso a una chat IA, nessun dato viene trasferito o venduto.</p>
+  <h2>Modifiche all’informativa</h2>
+  <p>Possiamo aggiornare questa informativa. La data dell’ultimo aggiornamento è indicata in cima alla pagina.</p>
+  <h2>Contatti</h2>
+  <p>Domande su questa informativa: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<article lang="cs" data-title="Zásady ochrany soukromí — AutoGarage" hidden>
+  <h1>Zásady ochrany soukromí — AutoGarage</h1>
+  <p class="updated">Poslední aktualizace: 28. září 2026</p>
+  <p>AutoGarage je rozšíření pro Chrome, které ukládá inzeráty aut z mobile.de a pomáhá porovnat více z nich v AI chatu podle vašeho výběru. Tato stránka popisuje, jaká data rozšíření zpracovává a jak.</p>
+  <h2>Auta, která ukládáte</h2>
+  <ul>
+    <li>Když na stránce inzerátu kliknete na „Uložit do AutoGarage“, rozšíření z ní načte údaje inzerátu: název, cenu, datum první registrace, stav tachometru, výbavu, technické údaje, popis prodejce, typ prodejce a adresu a odkaz na hlavní fotografii. To vše je v inzerátu již veřejně zobrazeno. Před uložením můžete údaje zkontrolovat, upravit a přidat vlastní poznámku.</li>
+    <li>Uložená auta, vaše poznámky, text „Vaše situace“, zvolený jazyk a označená auta se ukládají <strong>pouze lokálně</strong> ve vašem prohlížeči (<code>chrome.storage.local</code>). Neposíláme je na naše servery ani je tam neukládáme.</li>
+    <li>Smažou se, když auto odeberete ze seznamu nebo rozšíření odinstalujete.</li>
+  </ul>
+  <h2>Odeslání porovnání do AI chatu</h2>
+  <ul>
+    <li>Když kliknete na „Kopírovat prompt“ nebo „Porovnat v AI chatu“, rozšíření sestaví z vybraných aut textový dotaz (prompt) — včetně vašich poznámek a textu „Vaše situace“, pokud jste je vyplnili.</li>
+    <li>„Kopírovat prompt“ ho pouze vloží do schránky. „Porovnat v AI chatu“ otevře vámi zvolenou službu (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat nebo Alice) v nové kartě a předá jí prompt — v adrese stránky nebo přes schránku. Děje se to pouze po vašem kliknutí.</li>
+    <li>Od té chvíle prompt zpracovává tato služba podle svých vlastních zásad ochrany soukromí. Neuvádějte v poznámkách ani v poli „Vaše situace“ osobní údaje, které nechcete sdílet.</li>
+  </ul>
+  <h2>Anonymní statistiky používání</h2>
+  <p>Rozšíření odesílá anonymní události používání přes náš vlastní proxy server do Google Analytics 4 — například: otevřen panel, uloženo auto, zkopírován prompt, otevřen AI chat (a který), změněn jazyk, zobrazen nebo kliknut banner. Pomáhá nám to pochopit, které funkce se používají, a vyhodnocovat partnerská umístění. Každá událost obsahuje:</p>
+  <ul>
+    <li>náhodný anonymní identifikátor vytvořený lokálně při instalaci — není spojen s vaším jménem, e-mailem ani účtem;</li>
+    <li>identifikátor relace — čas začátku aktuální relace; po 30 minutách nečinnosti začíná nová relace;</li>
+    <li>název události a několik technických parametrů (počet aut, zvolený jazyk, který AI chat nebo banner); u událostí týkajících se konkrétních aut — číslo inzerátu, název a cenu z mobile.de (veřejné údaje inzerátu);</li>
+    <li>přibližnou polohu (země, region, město), kterou náš server odvodí z vaší IP adresy — nejde o přesné souřadnice ani GPS. Samotná IP adresa se do Google Analytics nepředává.</li>
+  </ul>
+  <p>Neshromažďujeme vaše jméno, e-mail, historii prohlížení ani obsah vašich konverzací s AI chaty. Zpracování dat v Google Analytics se řídí <a href="https://policies.google.com/privacy?hl=cs" target="_blank" rel="noopener noreferrer">Zásadami ochrany soukromí Google</a>.</p>
+  <h2>Partnerské odkazy a bannery</h2>
+  <p>Rozšíření může zobrazovat partnerské (affiliate) odkazy — v bannerech a v odkazech pod uloženými auty (například prověření historie vozidla v carVertical, nabídky úvěru nebo pojištění). Pokud přes takový odkaz koupíte produkt nebo službu, můžeme získat provizi — vaše cena se tím nemění. Odkaz se otevře na webu třetí strany, kde platí jeho vlastní zásady ochrany soukromí. Abychom mohli zobrazovat nabídky platné ve vaší zemi (například úvěry), rozšíření se našeho serveru zeptá na vaši zemi, kterou server určí podle IP adresy; vrací se jen kód země a nic se neukládá.</p>
+  <h2>Oprávnění rozšíření</h2>
+  <ul>
+    <li><code>storage</code> — ukládání uložených aut a nastavení lokálně v prohlížeči.</li>
+    <li><code>sidePanel</code> — zobrazení seznamu uložených aut v postranním panelu Chrome.</li>
+    <li>Přístup k mobile.de — zobrazení tlačítka pro uložení a záložky, která otevírá panel, a načtení údajů inzerátu, když kliknete na „Uložit“.</li>
+    <li>Přístup k <code>edgrln.github.io</code> — načítání nastavení bannerů (pouze data, žádný kód).</li>
+    <li>Přístup k <code>car-to-gpt.e-lakshin.workers.dev</code> — náš proxy server pro statistiky používání.</li>
+  </ul>
+  <h2>Data neprodáváme</h2>
+  <p>Kromě anonymních statistik v Google Analytics a promptu, který sami odešlete do AI chatu, se žádná data nikam nepředávají ani neprodávají.</p>
+  <h2>Změny těchto zásad</h2>
+  <p>Tyto zásady můžeme aktualizovat. Datum poslední aktualizace je uvedeno v horní části stránky.</p>
+  <h2>Kontakt</h2>
+  <p>Dotazy k těmto zásadám: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<article lang="pt" data-title="Política de privacidade — AutoGarage" hidden>
+  <h1>Política de privacidade — AutoGarage</h1>
+  <p class="updated">Última atualização: 28 de setembro de 2026</p>
+  <p>O AutoGarage é uma extensão do Chrome que guarda anúncios de carros do mobile.de e ajuda a comparar vários num chat de IA à sua escolha. Esta página explica que dados a extensão trata e como.</p>
+  <h2>Carros que guarda</h2>
+  <ul>
+    <li>Quando clica em «Guardar no AutoGarage» na página de um anúncio, a extensão lê os dados do anúncio nessa página: título, preço, primeira matrícula, quilometragem, equipamento, dados técnicos, descrição do vendedor, tipo de vendedor e endereço, e uma ligação para a foto principal. Tudo isto já é mostrado publicamente no anúncio. Antes de guardar, pode verificar e editar os dados e acrescentar uma nota sua.</li>
+    <li>Os carros guardados, as suas notas, o texto «A sua situação», o idioma escolhido e os carros selecionados são guardados <strong>apenas localmente</strong> no seu navegador (<code>chrome.storage.local</code>). Não os enviamos nem os guardamos nos nossos servidores.</li>
+    <li>São eliminados quando remove um carro da lista ou desinstala a extensão.</li>
+  </ul>
+  <h2>Enviar uma comparação para um chat de IA</h2>
+  <ul>
+    <li>Quando clica em «Copiar prompt» ou «Comparar num chat de IA», a extensão cria um pedido de texto (prompt) com os carros selecionados — incluindo as suas notas e o texto «A sua situação», se os tiver preenchido.</li>
+    <li>«Copiar prompt» apenas o coloca na área de transferência. «Comparar num chat de IA» abre o serviço que escolher (ChatGPT, Claude, Perplexity, DeepSeek, GigaChat ou Alice) num novo separador e passa-lhe o prompt — no endereço da página ou através da área de transferência. Isto só acontece quando clica.</li>
+    <li>A partir daí, o prompt é tratado por esse serviço de acordo com a sua própria política de privacidade. Não inclua nas notas nem no campo «A sua situação» dados pessoais que não queira partilhar.</li>
+  </ul>
+  <h2>Estatísticas de utilização anónimas</h2>
+  <p>A extensão envia eventos de utilização anónimos através do nosso próprio servidor proxy para o Google Analytics 4 — por exemplo: painel aberto, carro guardado, prompt copiado, chat de IA aberto (e qual), idioma alterado, banner mostrado ou clicado. Isto ajuda-nos a perceber que funcionalidades são usadas e a medir as colocações de parceiros. Cada evento inclui:</p>
+  <ul>
+    <li>um identificador anónimo aleatório gerado localmente na instalação — não associado ao seu nome, e-mail ou a qualquer conta;</li>
+    <li>um identificador de sessão — a hora de início da sessão atual; após 30 minutos de inatividade começa uma nova sessão;</li>
+    <li>o nome do evento e alguns parâmetros técnicos (número de carros, idioma escolhido, que chat de IA ou banner); nos eventos sobre carros concretos — o número do anúncio, o título e o preço do mobile.de (dados públicos do anúncio);</li>
+    <li>a localização aproximada (país, região, cidade) que o nosso servidor deduz do seu endereço IP — não coordenadas exatas nem GPS. O próprio endereço IP não é transmitido ao Google Analytics.</li>
+  </ul>
+  <p>Não recolhemos o seu nome, e-mail, histórico de navegação nem o conteúdo das suas conversas com chats de IA. O tratamento de dados no Google Analytics rege-se pela <a href="https://policies.google.com/privacy?hl=pt" target="_blank" rel="noopener noreferrer">Política de Privacidade da Google</a>.</p>
+  <h2>Ligações de afiliados e banners</h2>
+  <p>A extensão pode mostrar ligações de afiliados — em banners e em ligações por baixo dos carros guardados (por exemplo, a verificação do histórico do veículo no carVertical, ofertas de crédito ou de seguro). Se comprar um produto ou serviço através de uma dessas ligações, podemos receber uma comissão — o preço para si não muda. A ligação abre num site de terceiros, onde se aplica a respetiva política de privacidade. Para mostrar ofertas válidas no seu país (por exemplo, crédito), a extensão pergunta ao nosso servidor qual é o seu país, que este determina a partir do seu endereço IP; só é devolvido o código do país e nada é guardado.</p>
+  <h2>Permissões da extensão</h2>
+  <ul>
+    <li><code>storage</code> — guardar localmente no navegador os carros e as definições.</li>
+    <li><code>sidePanel</code> — mostrar a lista de carros guardados no painel lateral do Chrome.</li>
+    <li>Acesso ao mobile.de — mostrar o botão de guardar e um separador que abre o painel, e ler os dados do anúncio quando clica em «Guardar».</li>
+    <li>Acesso a <code>edgrln.github.io</code> — carregar as definições dos banners (apenas dados, sem código).</li>
+    <li>Acesso a <code>car-to-gpt.e-lakshin.workers.dev</code> — o nosso servidor proxy para estatísticas de utilização.</li>
+  </ul>
+  <h2>Não vendemos dados</h2>
+  <p>Além das estatísticas anónimas no Google Analytics e do prompt que envia pessoalmente para um chat de IA, nenhum dado é transferido ou vendido.</p>
+  <h2>Alterações a esta política</h2>
+  <p>Podemos atualizar esta política. A data da última atualização é indicada no topo da página.</p>
+  <h2>Contacto</h2>
+  <p>Questões sobre esta política: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<article lang="ar" dir="rtl" data-title="سياسة الخصوصية — AutoGarage" hidden>
+  <h1>سياسة الخصوصية — AutoGarage</h1>
+  <p class="updated">آخر تحديث: 28 سبتمبر 2026</p>
+  <p>AutoGarage إضافة لمتصفح Chrome تحفظ إعلانات السيارات من mobile.de وتساعدك على مقارنة عدة سيارات في دردشة ذكاء اصطناعي من اختيارك. توضح هذه الصفحة البيانات التي تعالجها الإضافة وكيفية معالجتها.</p>
+  <h2>السيارات التي تحفظها</h2>
+  <ul>
+    <li>عند النقر على «احفظ في AutoGarage» في صفحة إعلان، تقرأ الإضافة بيانات الإعلان من تلك الصفحة: العنوان والسعر وتاريخ أول تسجيل وعدد الكيلومترات والتجهيزات والبيانات الفنية ووصف البائع ونوع البائع وعنوانه ورابط الصورة الرئيسية. كل ذلك معروض علنًا في الإعلان أصلًا. يمكنك قبل الحفظ مراجعة البيانات وتعديلها وإضافة ملاحظتك الخاصة.</li>
+    <li>تُخزَّن السيارات المحفوظة وملاحظاتك ونص «وضعك» واللغة المختارة والسيارات المحددة <strong>محليًا فقط</strong> في متصفحك (<code>chrome.storage.local</code>). لا نرسلها إلى خوادمنا ولا نخزّنها فيها.</li>
+    <li>تُحذف عند إزالة سيارة من القائمة أو إلغاء تثبيت الإضافة.</li>
+  </ul>
+  <h2>إرسال المقارنة إلى دردشة ذكاء اصطناعي</h2>
+  <ul>
+    <li>عند النقر على «نسخ الطلب» أو «قارن في دردشة ذكاء اصطناعي»، تُنشئ الإضافة طلبًا نصيًا من السيارات المحددة، بما في ذلك ملاحظاتك ونص «وضعك» إن كنت قد ملأتها.</li>
+    <li>«نسخ الطلب» يضعه في الحافظة فقط. أما «قارن في دردشة ذكاء اصطناعي» فيفتح الخدمة التي تختارها (ChatGPT أو Claude أو Perplexity أو DeepSeek أو GigaChat أو Alice) في علامة تبويب جديدة ويمرّر إليها الطلب، إما في عنوان الصفحة أو عبر الحافظة. ولا يحدث ذلك إلا عند نقرك.</li>
+    <li>بعد ذلك تعالج تلك الخدمة الطلب وفق سياسة الخصوصية الخاصة بها. لا تكتب في الملاحظات أو في حقل «وضعك» بيانات شخصية لا تريد مشاركتها.</li>
+  </ul>
+  <h2>إحصاءات استخدام مجهولة الهوية</h2>
+  <p>ترسل الإضافة أحداث استخدام مجهولة الهوية عبر خادم الوسيط الخاص بنا إلى Google Analytics 4، مثل: فتح اللوحة، حفظ سيارة، نسخ الطلب، فتح دردشة ذكاء اصطناعي (وأيّها)، تغيير اللغة، عرض لافتة أو النقر عليها. يساعدنا ذلك على فهم الميزات المستخدمة وقياس أداء مواضع الشركاء. يتضمن كل حدث:</p>
+  <ul>
+    <li>معرّفًا عشوائيًا مجهول الهوية يُنشأ محليًا عند التثبيت، غير مرتبط باسمك أو بريدك الإلكتروني أو أي حساب؛</li>
+    <li>معرّف الجلسة، وهو وقت بدء الجلسة الحالية؛ وتبدأ جلسة جديدة بعد 30 دقيقة من عدم النشاط؛</li>
+    <li>اسم الحدث وبعض المعلمات التقنية (عدد السيارات، اللغة المختارة، أي دردشة ذكاء اصطناعي أو لافتة)؛ وفي الأحداث المتعلقة بسيارات محددة: رقم الإعلان وعنوانه وسعره من mobile.de (بيانات إعلان عامة)؛</li>
+    <li>موقعًا تقريبيًا (البلد، المنطقة، المدينة) يستنتجه خادمنا من عنوان IP الخاص بك، وليس إحداثيات دقيقة ولا GPS. ولا يُمرَّر عنوان IP نفسه إلى Google Analytics.</li>
+  </ul>
+  <p>لا نجمع اسمك أو بريدك الإلكتروني أو سجل تصفحك أو محتوى محادثاتك مع دردشات الذكاء الاصطناعي. تخضع معالجة البيانات في Google Analytics لـ<a href="https://policies.google.com/privacy?hl=ar" target="_blank" rel="noopener noreferrer">سياسة خصوصية Google</a>.</p>
+  <h2>روابط الشركاء واللافتات</h2>
+  <p>قد تعرض الإضافة روابط شركاء (روابط تسويق بالعمولة) — في اللافتات وفي الروابط أسفل السيارات المحفوظة (مثل التحقق من سجل المركبة عبر carVertical، أو عروض التمويل أو التأمين). إذا اشتريت منتجًا أو خدمة عبر أحد هذه الروابط، فقد نحصل على عمولة، ولا يتغير السعر بالنسبة لك. يُفتح الرابط على موقع طرف ثالث تسري عليه سياسة الخصوصية الخاصة به. لعرض العروض المتاحة في بلدك (مثل التمويل)، تطلب الإضافة من خادمنا معرفة بلدك، الذي يحدده من عنوان IP الخاص بك؛ ولا يُعاد سوى رمز البلد ولا يُخزَّن أي شيء.</p>
+  <h2>أذونات الإضافة</h2>
+  <ul>
+    <li><code>storage</code>: لتخزين السيارات المحفوظة والإعدادات محليًا في المتصفح.</li>
+    <li><code>sidePanel</code>: لعرض قائمة السيارات المحفوظة في اللوحة الجانبية لـ Chrome.</li>
+    <li>الوصول إلى mobile.de: لعرض زر الحفظ وعلامة تفتح اللوحة، ولقراءة بيانات الإعلان عند النقر على «احفظ».</li>
+    <li>الوصول إلى <code>edgrln.github.io</code>: لتحميل إعدادات اللافتات (بيانات فقط، دون أي شيفرة).</li>
+    <li>الوصول إلى <code>car-to-gpt.e-lakshin.workers.dev</code>: خادم الوسيط الخاص بنا لإحصاءات الاستخدام.</li>
+  </ul>
+  <h2>لا نبيع البيانات</h2>
+  <p>باستثناء الإحصاءات مجهولة الهوية في Google Analytics والطلب الذي ترسله بنفسك إلى دردشة ذكاء اصطناعي، لا تُنقل أي بيانات إلى أي جهة ولا تُباع.</p>
+  <h2>التغييرات على هذه السياسة</h2>
+  <p>قد نحدّث هذه السياسة. يظهر تاريخ آخر تحديث في أعلى الصفحة.</p>
+  <h2>التواصل</h2>
+  <p>للاستفسارات حول هذه السياسة: <a href="mailto:info@datacloudhero.com">info@datacloudhero.com</a>.</p>
+</article>
+
+<script>
+  (function () {
+    var articles = document.querySelectorAll('article[lang]');
+    var codes = Array.prototype.map.call(articles, function (a) { return a.lang; });
+    var select = document.getElementById('lang');
+
+    function pick() {
+      var fromUrl = new URLSearchParams(location.search).get('lang');
+      if (fromUrl && codes.indexOf(fromUrl) !== -1) return fromUrl;
+      var prefs = navigator.languages || [navigator.language || ''];
+      for (var i = 0; i < prefs.length; i++) {
+        var c = (prefs[i] || '').split('-')[0].toLowerCase();
+        if (codes.indexOf(c) !== -1) return c;
+      }
+      return 'en';
+    }
+
+    function show(code) {
+      articles.forEach(function (a) {
+        a.hidden = a.lang !== code;
+        if (!a.hidden) document.title = a.dataset.title;
+      });
+      document.documentElement.lang = code;
+      select.value = code;
+    }
+
+    select.addEventListener('change', function () {
+      show(select.value);
+      var url = new URL(location.href);
+      url.searchParams.set('lang', select.value);
+      history.replaceState(null, '', url);
+    });
+
+    show(pick());
+  })();
+</script>
 
 </body>
 </html>
